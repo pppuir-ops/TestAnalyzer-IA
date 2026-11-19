@@ -1,0 +1,312 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+:root {
+    --fondo: #090D18;
+    --panel: #101827;
+    --panel-input: #151F31;
+    --azul: #1677FF;
+    --azul-brillo: #3990FF;
+    --rojo: #FF3158;
+    --rojo-claro: #FF718B;
+    --texto: #EEF4FF;
+    --texto-secundario: #A8B8D0;
+    --borde: #293953;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Space Grotesk", sans-serif;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background:
+        radial-gradient(ellipse at 15% 20%, #1677FF20, transparent 40%),
+        radial-gradient(ellipse at 85% 80%, #FF315820, transparent 40%),
+        var(--fondo);
+    color: var(--texto);
+}
+
+.container {
+    width: 800px;
+    height: 500px;
+    display: flex;
+    position: relative;
+    align-items: stretch;
+    background-color: var(--panel);
+    border: 1px solid var(--borde);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow:
+        0 0 20px #1677FF20,
+        0 0 45px #FF315810;
+}
+
+.container-form {
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.container-form form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.5s ease-in;
+}
+
+.container-form h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: var(--texto);
+    text-shadow: 0 0 16px #1677FF35;
+}
+
+.redes-sociales {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.redes-sociales ion-icon {
+    color: var(--azul-brillo);
+    border: 1px solid var(--borde);
+    border-radius: 6px;
+    padding: 8px;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.redes-sociales ion-icon:hover {
+    color: var(--rojo-claro);
+    border-color: var(--rojo);
+    box-shadow: 0 0 12px #FF315830;
+    transform: translateY(-2px);
+}
+
+.container-form span {
+    font-size: 12px;
+    margin-bottom: 15px;
+    color: var(--texto-secundario);
+}
+
+.container-input {
+    width: 80%;
+    max-width: 300px;
+    height: 42px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 0 15px;
+    background-color: var(--panel-input);
+    border: 1px solid var(--borde);
+    border-radius: 6px;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.container-input:focus-within {
+    border-color: var(--azul-brillo);
+    box-shadow: 0 0 12px #1677FF35;
+}
+
+.container-input ion-icon {
+    color: var(--azul-brillo);
+    flex-shrink: 0;
+}
+
+.container-input input {
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    color: var(--texto);
+    font-size: 14px;
+}
+
+.container-input input::placeholder {
+    color: #8190A8;
+}
+
+.container-form a {
+    color: var(--azul-brillo);
+    font-size: 14px;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.container-form a:hover {
+    color: var(--rojo-claro);
+    text-decoration: underline;
+}
+
+.button {
+    width: 170px;
+    min-height: 45px;
+    font-size: 15px;
+    font-weight: 700;
+    color: white;
+    border: 1px solid #5CA2FF;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+    background: linear-gradient(100deg, #1677FF, #395DFF);
+    box-shadow: 0 0 14px #1677FF40;
+    transition: 0.25s ease;
+}
+
+.container-form .button:hover {
+    background: linear-gradient(100deg, #398FFF, #6379FF);
+    box-shadow: 0 0 22px #1677FF70;
+    transform: translateY(-2px);
+}
+
+.button:disabled {
+    opacity: 0.6;
+    cursor: wait;
+    transform: none;
+}
+
+/* Animaciones entre registro e inicio de sesión */
+
+.registro {
+    transform: translateX(-100%);
+}
+
+.container.toggle .inicio-sesion {
+    transform: translateX(100%);
+}
+
+.container.toggle .registro {
+    transform: translateX(0);
+}
+
+/* Panel de bienvenida */
+
+.container-welcome {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    transform: translateX(100%);
+    background: linear-gradient(145deg, #102747, #14203C 55%, #291624);
+    border-left: 1px solid #31517A;
+    overflow: hidden;
+    transition:
+        transform 0.5s ease-in-out,
+        border-radius 0.5s ease-in-out,
+        background 0.5s ease-in-out;
+    border-radius: 50% 0 0 50%;
+    box-shadow: inset 8px 0 35px #1677FF12;
+}
+
+.container.toggle .container-welcome {
+    transform: translateX(0);
+    border-radius: 0 50% 50% 0;
+    background: linear-gradient(145deg, #321522, #1D1B35 55%, #102747);
+    border-left: none;
+    border-right: 1px solid #FF315855;
+    box-shadow: inset -8px 0 35px #FF315812;
+}
+
+.container-welcome .welcome {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 0 35px;
+    text-align: center;
+    transition: transform 0.5s ease-in-out;
+}
+
+.wecome-sign-in {
+    transform: translateX(100%);
+}
+
+.container-welcome h3 {
+    font-size: 34px;
+    color: var(--texto);
+    text-shadow:
+        0 0 12px #3990FF55,
+        0 0 25px #1677FF25;
+}
+
+.container-welcome p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--texto-secundario);
+    text-align: center;
+}
+
+.container-welcome .button {
+    border: 2px solid var(--azul-brillo);
+    background: transparent;
+    box-shadow: 0 0 12px #1677FF25;
+}
+
+.container-welcome .button:hover {
+    color: white;
+    border-color: var(--rojo-claro);
+    background: #FF315815;
+    box-shadow: 0 0 18px #FF315840;
+}
+
+.container.toggle .wecome-sign-in {
+    transform: translateX(0);
+}
+
+.container.toggle .wecome-sign-up {
+    transform: translateX(-100%);
+}
+
+/* Adaptación para pantallas pequeñas */
+
+@media (max-width: 650px) {
+    body {
+        padding: 12px;
+        min-height: 100vh;
+        height: auto;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 420px;
+        min-height: 620px;
+        height: auto;
+    }
+
+    .container-form {
+        width: 100%;
+        min-height: 620px;
+    }
+
+    .container-welcome {
+        display: none;
+    }
+
+    .container-form form {
+        padding: 25px 0;
+    }
+
+    .container-form h2 {
+        font-size: 27px;
+    }
+}

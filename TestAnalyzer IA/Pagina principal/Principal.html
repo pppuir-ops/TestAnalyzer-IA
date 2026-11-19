@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TestAnalyzer IA</title>
+    <link rel="stylesheet" href="../Pagina principal/principal.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <h2><span>TA</span> TestAnalyzer AI</h2>
+
+        <p class="menu-title">MENÚ PRINCIPAL</p>
+
+        <nav>
+            <a class="active" href="principal.html">Inicio</a>
+            <a href="#" id="btn-analizar">Analizar pruebas</a>
+            <a href="#" id="btn-historial">Historial</a>
+            <a href="#" id="btn-reportes">Reportes</a>
+
+            <!-- NUEVO: Exclusivo para administrador -->
+            <a href="../Administrador/admin.html"
+               id="menu-admin"
+               class="opcion-admin"
+               hidden>
+                Administrar tareas
+            </a>
+        </nav>
+
+        <button id="btn-cerrar-sesion" class="logout">
+            Cerrar sesión
+        </button>
+    </aside>
+
+    <main class="content">
+        <header>
+            <div>
+                <p class="eyebrow">PANEL DE CONTROL</p>
+                <h1>Inicio</h1>
+            </div>
+
+            <div class="user-info">
+                <div class="avatar">TA</div>
+                <span id="usuario-correo">Cargando usuario...</span>
+
+                <!-- NUEVO: Indicador del rol -->
+                <span id="rol-usuario" class="rol-usuario">
+                    Verificando permisos...
+                </span>
+            </div>
+        </header>
+
+        <section class="welcome">
+            <p class="eyebrow">TESTANALYZER AI</p>
+            <h2 id="bienvenida">Bienvenido</h2>
+            <p>
+                Administra tus pruebas de software y consulta
+                los resultados de tus análisis desde un solo lugar.
+            </p>
+            <button id="btn-nuevo-analisis" class="primary">
+                + Nuevo análisis
+            </button>
+        </section>
+
+        <section class="stats">
+            <article class="stat-card">
+                <p>Análisis realizados</p>
+                <h3>0</h3>
+                <span>Actividad total</span>
+            </article>
+
+            <article class="stat-card">
+                <p>Pruebas analizadas</p>
+                <h3>0</h3>
+                <span>Casos procesados</span>
+            </article>
+
+            <article class="stat-card">
+                <p>Reportes generados</p>
+                <h3>0</h3>
+                <span>Resultados guardados</span>
+            </article>
+        </section>
+
+        <section class="recent">
+            <h2>Actividad reciente</h2>
+            <div class="empty-state">
+                <div class="empty-icon">↗</div>
+                <h3>Tu espacio de trabajo está listo</h3>
+                <p>
+                    Cuando implementes los análisis,
+                    aquí podrás consultar tu actividad reciente.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="../Pagina principal/principal.js"></script>
+</body>
+</html>
